@@ -1,23 +1,28 @@
-<html>
+<html ng-app ="myApp">
 <head>
   <meta charset="UTF-8">
-  <title>Short Url</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/main.css" media="screen" title="no title" charset="utf-8">
+  <title>Contact List App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/main.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-   <div class="container jumbotron">
-     <h1>Welcome to Lin's Url Shorten Service</h1>
-     <p> Feel free to turn your long ugly url into short clean one</p>
-   </div>
+  <div class="container jumbotron" ng-controller="AppCtrl">
+    <h1>Url Shorten Service</h1>
+    <p>type in your long url and get a shortened one back</p>
+    <textarea name="name" rows="3" cols="80" ng-model="originalUrl"></textarea>
+    <button ng-click="generate()">Submit</button>
+    <div id="output"><p>your short url:</p>
+      <input type="text" placeholder="{{shortUrl}}"></div>
+  </div>
 
-   <div class="container">
 
-   </div>
 
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js">
-  </script>
-  <script src="/controllers/controller"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js">
+
+</script>
+
+<script src="controllers/controller.js"></script>
 
 </body>
 </html>
