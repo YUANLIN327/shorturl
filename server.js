@@ -10,7 +10,7 @@ app.use(express.static(__dirname+"/public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://localhost/shorturlwebs");
+mongoose.connect("mongodb://yuanlin:1QAZ2wsx@ds017258.mlab.com:17258/shortwebs");
 
 //redirect users
 app.get("/:id", function(req, res) {
