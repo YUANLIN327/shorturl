@@ -1,5 +1,7 @@
 var express = require('express'),
   mongoose = require("mongoose"),
+  parse =require("./lib/parse"),
+  random = require("./lib/random"),
   bodyParser = require("body-Parser"),
   app = express();
 
