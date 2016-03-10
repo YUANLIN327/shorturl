@@ -1,3 +1,45 @@
 body{
-  padding-top:15px;
+  padding-top:10%;
+
+}
+
+footer{
+  margin-top:20%;
+}
+
+
+.logo{
+  height: 140px;
+  width: 400px;
+  background: url("../images/blue-short-logo.jpg");
+  margin:0 auto 5%;
+}
+
+.textinput{
+  margin-bottom: 20px;
+
+}
+
+.btnreturn{
+  display:none;
+}
+
+#btnsubmit{
+  margin-left: 20px;
+}
+
+#btnback{
+  margin-right:20px;
+
+}
+#userinput{
+  width:60%;
+  height:40px;
+  display:inline;
+}
+
+#returnedurl{
+  width:40%;
+  height:40px;
+  display:none;
 }

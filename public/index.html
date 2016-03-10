@@ -3,26 +3,57 @@
   <meta charset="UTF-8">
   <title>Contact List App</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="/stylesheets/main.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>
-  <div class="container jumbotron" ng-controller="AppCtrl">
-    <h1>Url Shorten Service</h1>
-    <p>type in your long url and get a shortened one back</p>
-    <textarea name="name" rows="3" cols="80" ng-model="originalUrl"></textarea>
-    <button ng-click="generate()">Submit</button>
-    <div id="output"><p>your short url:</p>
-      <input type="text" placeholder="{{shortUrl}}"></div>
+  <div class="wrapper container text-center" ng-controller="AppCtrl">
+    <div class='logo'></div>
+    <!-- input text area -->
+    <div class="textinput">
+      <input class="form-control" name="name"  id="userinput" ng-model="originalUrl"
+        placeholder="  type in your long url">
+
+      <input class="js-copytextarea form-control" name="name"  id="returnedurl"
+       value={{shortUrl}} >
+    </div>
+
+   <!-- main button area -->
+    <div class="btnmain">
+      <button  id="btnclear" class="btn btn-lg" >
+        Clear
+      </button>
+      <button id="btnsubmit" class="btn btn-lg btn-primary" ng-click="generate()">
+        Submit 
+      </button>
+    </div>
+
+    <!--return button area-->
+    <div class="btnreturn">
+      <button  id="btnback" class="btn btn-lg " ng-click="generate()">
+        Another
+      </button>
+      <button class="js-textareacopybtn btn btn-lg btn-warning ">
+        Copy
+      </button>
+    </div>
+
+
+
   </div>
 
+  <footer>
+      <div class="container text-center">
+        <p> Copyright &copy; 2016, ALl Rights Reserved </p>
+        </div>
+ </footer>
 
 
 
+<!--import javascript  -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js">
-
 </script>
-
 <script src="controllers/controller.js"></script>
+<script src="js/display.js"></script>
 
 </body>
 </html>

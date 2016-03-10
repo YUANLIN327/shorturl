@@ -12,7 +12,7 @@
         console.log($scope.originWeb);
         $http.post("/",body).success(function(response){
           console.log("I got the data I requested");
-          $scope.shortUrl = response.shortUrl;
+          $scope.shortUrl ="http://thawing-depths-22622.herokuapp.com/"+response.shortUrl;
         });
       };
 

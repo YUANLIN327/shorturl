@@ -3,7 +3,7 @@ var express = require('express'),
     mongoose = require("mongoose"),
     parse =require("./lib/parse"),
     random = require("./lib/random"),
-    bodyParser = require("body-Parser"),
+    bodyParser = require("body-parser"),
     ShortWeb = require('./models/shortweb');
 
 app.use(express.static(__dirname+"/public"));
@@ -68,6 +68,6 @@ app.post("/",function(req,res){
   });
 });
 
-app.listen("2000",function(){
-  console.log("server is running");
+app.listen(process.env.PORT, process.env.IP, function(){
+   console.log("The Shorten URL Server Has Started!");
 });
