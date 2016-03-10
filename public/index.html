@@ -6,6 +6,23 @@
   <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="/">Shorten Url</a>
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                      <li><a href="/login">Login</a></li>
+                      <li><a href="/register">Sign Up</a></li>
+
+              </ul>
+          </div>
+      </div>
+  </nav>
+
   <div class="wrapper container text-center" ng-controller="AppCtrl">
     <div class='logo'></div>
     <!-- input text area -->
@@ -23,7 +40,7 @@
         Clear
       </button>
       <button id="btnsubmit" class="btn btn-lg btn-primary" ng-click="generate()">
-        Submit 
+        Submit
       </button>
     </div>
 
