@@ -1,76 +1,76 @@
-<html ng-app ="myApp">
-<head>
-  <meta charset="UTF-8">
-  <title>Contact List App</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="stylesheets/main.css">
-</head>
-<body>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>Contact List App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/main.css">
+  </head>
+  <body>
 
-
-  <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
-          <div class="navbar-header">
-              <a class="navbar-brand" href="/">Shorten Url</a>
-          </div>
-          <div class="collapse navbar-collapse">
-              <ul class="nav navbar-nav navbar-right">
-                      <li><a href="/login">Login</a></li>
-                      <li><a href="/register">Sign Up</a></li>
-
-              </ul>
-          </div>
-      </div>
-  </nav>
-
-  <div class="wrapper container text-center" ng-controller="AppCtrl">
-    <div class='logo'></div>
-    <!-- input text area -->
-    <div class="textinput">
-      <input class="form-control" name="name"  id="userinput" ng-model="originalUrl"
-        placeholder="  type in your long url">
-
-      <input class="js-copytextarea form-control" name="name"  id="returnedurl"
-       value={{shortUrl}} >
-    </div>
-
-   <!-- main button area -->
-    <div class="btnmain">
-      <button  id="btnclear" class="btn btn-lg" >
-        Clear
-      </button>
-      <button id="btnsubmit" class="btn btn-lg btn-primary" ng-click="generate()">
-        Submit
-      </button>
-    </div>
-
-    <!--return button area-->
-    <div class="btnreturn">
-      <button  id="btnback" class="btn btn-lg " ng-click="generate()">
-        Another
-      </button>
-      <button class="js-textareacopybtn btn btn-lg btn-warning ">
-        Copy
-      </button>
-    </div>
-
-
-
-  </div>
-
-  <footer>
-      <div class="container text-center">
-        <p> Copyright &copy; 2016, ALl Rights Reserved </p>
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Shorten Url</a>
         </div>
- </footer>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="/login">Login</a>
+            </li>
+            <li>
+              <a href="/register">Sign Up</a>
+            </li>
 
+          </ul>
+        </div>
+      </div>
+    </nav>
 
+    <div class="wrapper container text-center" ng-controller="AppCtrl">
+      <div class='logo'></div>
+      <!-- input text area -->
+      <div class="textinput">
+        <!-- user input box -->
+        <input class="form-control" name="name" id="userinput" ng-model="originalUrl" placeholder="  type in your long url" ng-hide="submitted">
 
-<!--import javascript  -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js">
-</script>
-<script src="controllers/controller.js"></script>
-<script src="js/display.js"></script>
+        <!-- result input box -->
+        <input class="js-copytextarea form-control" name="name" id="returnedurl" value={{shortUrl}} ng-show="submitted">
+      </div>
 
-</body>
+      <!-- main button area -->
+      <div class="btnmain">
+        <button id="btnclear" class="btn btn-lg" ng-hide="submitted" ng-click="originalUrl =''">
+          Clear
+        </button>
+        <button id="btnsubmit" class="btn btn-lg btn-primary" ng-click="generate()" ng-hide="submitted">
+          Submit
+        </button>
+      </div>
+
+      <!--return button area-->
+      <div class="btnreturn">
+        <button id="btnback" class="btn btn-lg "  ng-show="submitted" ng-click="goBack()">
+          Another
+        </button>
+        <button class="js-textareacopybtn btn btn-lg btn-warning " ng-show="submitted" ng-click = "addToClipboard()">
+          Copy
+        </button>
+      </div>
+
+    </div>
+
+    <footer>
+      <div class="container text-center">
+        <p>
+          Copyright &copy; 2016, ALl Rights Reserved
+        </p>
+      </div>
+    </footer>
+
+    <!--import javascript  -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
+    <!-- <script src="js/display.js"></script> -->
+
+  </body>
 </html>
