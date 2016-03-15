@@ -10,15 +10,15 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="/">Shorten Url</a>
+          <a class="navbar-brand" href="#/">Shorten Url</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="/login">Login</a>
+              <a href="#/login">Login</a>
             </li>
             <li>
-              <a href="/register">Sign Up</a>
+              <a href="#/register">Sign Up</a>
             </li>
 
           </ul>
@@ -26,37 +26,8 @@
       </div>
     </nav>
 
-    <div class="wrapper container text-center" ng-controller="AppCtrl">
-      <div class='logo'></div>
-      <!-- input text area -->
-      <div class="textinput">
-        <!-- user input box -->
-        <input class="form-control" name="name" id="userinput" ng-model="originalUrl" placeholder="  type in your long url" ng-hide="submitted">
-
-        <!-- result input box -->
-        <input class="js-copytextarea form-control" name="name" id="returnedurl" value={{shortUrl}} ng-show="submitted">
-      </div>
-
-      <!-- main button area -->
-      <div class="btnmain">
-        <button id="btnclear" class="btn btn-lg" ng-hide="submitted" ng-click="originalUrl =''">
-          Clear
-        </button>
-        <button id="btnsubmit" class="btn btn-lg btn-primary" ng-click="generate()" ng-hide="submitted">
-          Submit
-        </button>
-      </div>
-
-      <!--return button area-->
-      <div class="btnreturn">
-        <button id="btnback" class="btn btn-lg "  ng-show="submitted" ng-click="goBack()">
-          Another
-        </button>
-        <button class="js-textareacopybtn btn btn-lg btn-warning " ng-show="submitted" ng-click = "addToClipboard()">
-          Copy
-        </button>
-      </div>
-
+    <div class="wrapper container text-center">
+      <div ng-view></div>
     </div>
 
     <footer>
@@ -69,7 +40,11 @@
 
     <!--import javascript  -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <script src="controllers/controller.js"></script>
+    <script src="https://code.angularjs.org/1.5.0-rc.2/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.0-rc.2/angular-resource.min.js"></script>
+    <script src="app.js"></script>
+    <script src="route.js"></script>
+    <script src="controllers/mainControl.js"></script>
     <!-- <script src="js/display.js"></script> -->
 
   </body>

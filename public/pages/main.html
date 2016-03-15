@@ -1,0 +1,32 @@
+<a href="#/">
+  <img src="/images/blue-short-logo.jpg" alt="" height="140px" width="400px">
+</a>
+
+<!-- input text area -->
+<div class="textinput">
+  <!-- user input box -->
+  <input class="form-control" name="name" id="userinput" ng-model="originalUrl" placeholder="  type in your long url" ng-hide="submitted">
+
+  <!-- result input box -->
+  <input class="js-copytextarea form-control" name="name" id="returnedurl" value={{shortUrl}} ng-show="submitted">
+</div>
+
+<!-- main button area -->
+<div class="btnmain">
+  <button id="btnclear" class="btn btn-lg" ng-hide="submitted" ng-click="originalUrl =''">
+    Clear
+  </button>
+  <button id="btnsubmit" class="btn btn-lg btn-primary" ng-click="generate()" ng-hide="submitted">
+    Submit
+  </button>
+</div>
+
+<!--return button area-->
+<div class="btnreturn">
+  <button id="btnback" class="btn btn-lg "  ng-show="submitted" ng-click="goBack()">
+    Another
+  </button>
+  <button class="js-textareacopybtn btn btn-lg btn-warning " ng-show="submitted" ng-click = "addToClipboard()">
+    Copy
+  </button>
+</div>

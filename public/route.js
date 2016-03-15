@@ -1,0 +1,13 @@
+app.config(function($routeProvider){
+  $routeProvider
+  .when("/",{
+    templateUrl:"pages/main.html",
+    controller:"mainCtrl"
+  })
+  .when("/register",{
+    templateUrl:"pages/register.html"
+  })
+    .when("/login",{
+      templateUrl:"pages/login.html"
+    });
+});

@@ -68,6 +68,6 @@ app.post("/",function(req,res){
   });
 });
 
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen("3000", function(){
    console.log("The Shorten URL Server Has Started!");
 });

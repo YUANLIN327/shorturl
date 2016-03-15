@@ -1,6 +1,4 @@
-var app = angular.module('myApp', []);
-
-app.controller("AppCtrl", ['$scope', '$http', function($scope, $http) {
+app.controller("mainCtrl", ['$scope', '$http', function($scope, $http) {
 
   //variable keeps track of whether user submitted request
   $scope.submitted = false;
