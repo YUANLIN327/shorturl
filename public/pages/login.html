@@ -1,10 +1,14 @@
-<form class="userform">
+<form class="userform" >
   <header>Login</header>
   <label>Username <span>*</span> </label>
-  <input/>
+  <input name="username" ng-model="lusername"/>
   <div class="help">At least 6 character</div>
   <label>Password <span>*</span></label>
-  <input/>
+  <input name="password" ng-model="lpassword"/>
   <div class="help">Use upper and lowercase lettes as well</div>
-  <button>Login</button>
+  <button ng-click="login()">Login</button>
 </form>
+<div id="loginmessage" ng-show="notvaliduser">
+  <p>invalid username and password combination</p>
+</div>
+<!-- action="/login" method="POST" -->

@@ -113,3 +113,8 @@ form button:hover {
   height:40px;
   display:inline;
 }
+
+#loginmessage{
+  margin-top:20px;
+  color:red;
+}

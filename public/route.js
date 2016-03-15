@@ -5,9 +5,11 @@ app.config(function($routeProvider){
     controller:"mainCtrl"
   })
   .when("/register",{
-    templateUrl:"pages/register.html"
+    templateUrl:"pages/register.html",
+    controller:"mainCtrl"
   })
     .when("/login",{
-      templateUrl:"pages/login.html"
+      templateUrl:"pages/login.html",
+      controller:"mainCtrl"
     });
 });

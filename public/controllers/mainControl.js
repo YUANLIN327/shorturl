@@ -1,5 +1,7 @@
-app.controller("mainCtrl", ['$scope', '$http', function($scope, $http) {
+app.controller("mainCtrl", ['$scope', '$http','$location', function($scope, $http,$location) {
 
+  $scope.isLoggedin=false;
+  $scope.notvaliduser =false;
   //variable keeps track of whether user submitted request
   $scope.submitted = false;
 
@@ -54,6 +56,37 @@ app.controller("mainCtrl", ['$scope', '$http', function($scope, $http) {
     }, 0);
 
   };
+  //regiter function
+  $scope.register = function(){
+    console.log("this is register function");
+    var registerdata = JSON.stringify({
+
+    });
+  };
+
+  //login function
+  $scope.login = function(){
+    console.log("this is login function");
+    var logindata = JSON.stringify({
+      username:$scope.lusername,
+      password:$scope.lpassword
+    });
+
+    $http.post("/login",logindata).then(function(response){
+      $scope.notvaliduser =false;
+      $scope.isLoggedin=true;
+      console.log(response.isvalid);
+      $location.path("/");
+      console.log($scope.isLoggedin);
+    },function(response){
+      $scope.notvaliduser =true;
+      console.log("failed");
+
+    });
+
+
+   };
+
 
 
 
